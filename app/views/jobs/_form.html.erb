@@ -1,0 +1,25 @@
+<%= form_with model: @job do |form| %>
+  <% if form.object.errors.any? %>
+    <p class="error"><%= form.object.errors.full_messages.first %></p>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :title, :class => "form-label" %><span class="text-danger">*</span>
+    <%= form.text_field :title, :class => "form-control", required: true %>
+  </div>
+  
+  <div class="mb-3">
+    <%= form.label :salary, :class => "form-label" %>
+    <%= form.number_field :salary, :class => "form-control", min: 0 %>
+  </div>
+  
+  <div class="mb-3">
+    <%= form.label :description, :class => "form-label" %><span class="text-danger">*</span>
+    <%= form.text_area :description, :class => "form-control", required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Submit", :class => "btn btn-success" %>
+    <%= link_to "Cancel", :back, :class => "btn btn-danger" %>
+  </div>
+<% end %>

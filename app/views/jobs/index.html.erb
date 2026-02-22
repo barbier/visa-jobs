@@ -1,0 +1,15 @@
+<% if @jobs.length() == 0 %>
+  <p>No jobs available</p>
+<% else %>
+  <ul class="list-unstyled py-3">
+  <% @jobs.each do |job| %>
+    <li class="card mb-3">
+      <div class="card-body">
+        <h3><%= link_to job.title, job_path(job.id) %></h3>
+        <p><%= truncate(job.description, :length => 140) %></p>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
+

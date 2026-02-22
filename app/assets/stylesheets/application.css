@@ -1,0 +1,40 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+.main-menu {
+  gap: 8px
+}
+
+.job__description {
+  font-family: inherit;
+  white-space: pre-wrap;
+}
+
+@media screen and (width < 500px) {
+  .header {
+    align-items: start !important;
+  }
+
+  .main-menu {
+    align-items: end;
+    flex-direction: column;
+  }
+
+  .job__header {
+    align-items: start !important;
+  }
+
+  .job__action-buttons {
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+} 
